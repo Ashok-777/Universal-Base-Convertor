@@ -1,0 +1,253 @@
+
+/* --- Art Deco Color Palette --- */
+:root {
+    --color-primary: #9E7D63; /* Rustic Brown */
+    --color-secondary: #D4AF37; /* Gold/Bronze Accent */
+    --color-background: #F0E6D8; /* Cream/Pale Beige */
+    --color-panel: #FFFFFF;
+    --color-text: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.15);
+} 
+
+/* --- Global Reset & Art Deco Basics --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} 
+
+body {
+    font-family: 'Georgia', serif; 
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: var(--color-text);
+} 
+
+.main-container {
+    background: var(--color-panel);
+    padding: 40px;
+    border: 5px solid var(--color-primary); 
+    border-radius: 5px; 
+    box-shadow: 0 10px 25px var(--color-shadow);
+    width: 100%;
+    max-width: 950px;
+} 
+
+h1 {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+    border-bottom: 3px solid var(--color-secondary); 
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+} 
+
+/* --- Input Panel Styling --- */
+.input-panel {
+    background: #F8F8F8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.mode-panel {
+    border-color: var(--color-secondary); /* Highlight the Mode panel */
+}
+.mode-options {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+.mode-options .input-row {
+    margin-bottom: 0;
+}
+
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+} 
+
+.input-row label {
+    flex: 0 0 160px; /* Increased width for labels to fit "Conversion Mode" */
+    font-weight: bold;
+    color: var(--color-primary);
+} 
+
+.base-select, #inputValue, #bitWidthSelect {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+} 
+
+/* --- Results Grid --- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+} 
+
+.result-box {
+    background: #FFFFFF;
+    border: 2px solid var(--color-secondary); 
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 10px var(--color-shadow);
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+} 
+
+/* Animation on Click (for visual feedback) */
+.result-box:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px var(--color-shadow);
+} 
+
+.result-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-text);
+} 
+
+.output-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+} 
+
+.output-value {
+    flex-grow: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    word-break: break-all;
+    padding-right: 10px;
+} 
+
+.action-group {
+    display: flex;
+    gap: 10px;
+} 
+
+.copy-btn, .expand-btn {
+    padding: 8px 12px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    font-family: inherit;
+} 
+
+.copy-btn {
+    background-color: var(--color-secondary);
+    color: white;
+} 
+
+.copy-btn:hover {
+    background-color: #B8962A;
+} 
+
+.expand-btn {
+    background-color: #FFFFFF;
+    color: var(--color-primary);
+} 
+
+.expand-btn:hover {
+    background-color: #F0F0F0;
+} 
+
+/* --- Explanation Panel Styling --- */
+.explanation-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    background: #FAFAFA;
+    border-top: 1px dashed #ddd;
+    margin-top: 15px;
+    padding: 0 10px;
+} 
+
+.explanation-panel.expanded {
+    max-height: 1000px; /* Increased for complex explanations */
+    padding: 15px 10px 10px 10px;
+} 
+
+.explanation-text {
+    white-space: pre-wrap; 
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+} 
+
+/* --- Notification Popup --- */
+.notification-popup {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px); 
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    z-index: 1000;
+} 
+
+.notification-popup.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); 
+}
+
+
+/* --- Responsive Layout (Mobile) --- */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 20px;
+    } 
+
+    .results-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .input-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .input-row label {
+        flex: auto;
+        margin-bottom: 5px;
+    } 
+
+    .output-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .output-value {
+        padding-right: 0;
+        border-bottom: 1px dotted #ddd;
+        width: 100%;
+    } 
+
+    .action-group {
+        width: 100%;
+        justify-content: space-around;
+    }
+}
