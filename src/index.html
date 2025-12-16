@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Base Converter</title>
-    
-    <link rel="stylesheet" href="/style.css"> 
-    
+
+    <!-- ✅ Correct CSS path for Vercel -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="main-container">
-        <h1>Universal Base Converter</h1> 
+        <h1>Universal Base Converter</h1>
 
         <div class="input-panel mode-panel">
             <div class="input-row">
                 <label for="conversionMode">Conversion Mode:</label>
-                <select id="conversionMode" class="base-select" onchange="updateResults(); toggleModeUI()">
+                <select id="conversionMode" class="base-select"
+                        onchange="updateResults(); toggleModeUI()">
                     <option value="unsigned">Unsigned Integer (0, 1, 2, ...)</option>
                     <option value="signed">Signed Integer (+/- 2's Complement)</option>
                     <option value="fixed">Fixed-Point (Fractions, e.g., 10.5)</option>
                     <option value="float">Floating-Point (IEEE 754)</option>
                 </select>
             </div>
-            <div id="modeOptions" class="mode-options">
-            </div>
+            <div id="modeOptions" class="mode-options"></div>
         </div>
-        
+
         <div class="input-panel">
             <div class="input-row">
                 <label for="baseFrom">Source Base:</label>
@@ -36,73 +36,101 @@
                     <option value="8">Octal (Base 8)</option>
                 </select>
             </div>
+
             <div class="input-row">
                 <label for="inputValue">Enter Value:</label>
-                <input type="text" id="inputValue" placeholder="Enter value here..." oninput="updateResults()">
+                <input type="text" id="inputValue"
+                       placeholder="Enter value here..."
+                       oninput="updateResults()">
             </div>
-        </div> 
+        </div>
 
         <div class="results-grid">
-            
+
             <div class="result-box" data-base-name="Binary">
                 <label>Binary (Base 2):</label>
                 <div class="output-content">
                     <span id="resultBin" class="output-value"></span>
                     <div class="action-group">
-                        <button class="copy-btn" onclick="copyResult('resultBin', 'Binary')">Copy 📋</button>
-                        <button class="expand-btn" onclick="toggleExplanation('explainerBin')">Expand Explanation ></button>
+                        <button class="copy-btn"
+                                onclick="copyResult('resultBin', 'Binary')">
+                            Copy 📋
+                        </button>
+                        <button class="expand-btn"
+                                onclick="toggleExplanation('explainerBin')">
+                            Expand Explanation &gt;
+                        </button>
                     </div>
                 </div>
                 <div id="explainerBin" class="explanation-panel">
                     <p class="explanation-text"></p>
                 </div>
-            </div> 
+            </div>
 
             <div class="result-box" data-base-name="Octal">
                 <label>Octal (Base 8):</label>
                 <div class="output-content">
                     <span id="resultOct" class="output-value"></span>
                     <div class="action-group">
-                        <button class="copy-btn" onclick="copyResult('resultOct', 'Octal')">Copy 📋</button>
-                        <button class="expand-btn" onclick="toggleExplanation('explainerOct')">Expand Explanation ></button>
+                        <button class="copy-btn"
+                                onclick="copyResult('resultOct', 'Octal')">
+                            Copy 📋
+                        </button>
+                        <button class="expand-btn"
+                                onclick="toggleExplanation('explainerOct')">
+                            Expand Explanation &gt;
+                        </button>
                     </div>
                 </div>
                 <div id="explainerOct" class="explanation-panel">
                     <p class="explanation-text"></p>
                 </div>
-            </div> 
+            </div>
 
             <div class="result-box" data-base-name="Decimal">
                 <label>Decimal (Base 10):</label>
                 <div class="output-content">
                     <span id="resultDec" class="output-value"></span>
                     <div class="action-group">
-                        <button class="copy-btn" onclick="copyResult('resultDec', 'Decimal')">Copy 📋</button>
-                        <button class="expand-btn" onclick="toggleExplanation('explainerDec')">Expand Explanation ></button>
+                        <button class="copy-btn"
+                                onclick="copyResult('resultDec', 'Decimal')">
+                            Copy 📋
+                        </button>
+                        <button class="expand-btn"
+                                onclick="toggleExplanation('explainerDec')">
+                            Expand Explanation &gt;
+                        </button>
                     </div>
                 </div>
                 <div id="explainerDec" class="explanation-panel">
                     <p class="explanation-text"></p>
                 </div>
-            </div> 
+            </div>
 
             <div class="result-box" data-base-name="Hexadecimal">
                 <label>Hexadecimal (Base 16):</label>
                 <div class="output-content">
                     <span id="resultHex" class="output-value"></span>
                     <div class="action-group">
-                        <button class="copy-btn" onclick="copyResult('resultHex', 'Hexadecimal')">Copy 📋</button>
-                        <button class="expand-btn" onclick="toggleExplanation('explainerHex')">Expand Explanation ></button>
+                        <button class="copy-btn"
+                                onclick="copyResult('resultHex', 'Hexadecimal')">
+                            Copy 📋
+                        </button>
+                        <button class="expand-btn"
+                                onclick="toggleExplanation('explainerHex')">
+                            Expand Explanation &gt;
+                        </button>
                     </div>
                 </div>
                 <div id="explainerHex" class="explanation-panel">
                     <p class="explanation-text"></p>
                 </div>
             </div>
+
         </div>
     </div>
-    
-    <script src="/index.js"></script>
 
+    <!-- ✅ Correct JS path for Vercel -->
+    <script src="/index.js"></script>
 </body>
 </html>
