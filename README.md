@@ -130,6 +130,6 @@ The project will automatically open in your browser and reload on changes.
    
 ---
 
-<p align="center">© Ashok-777 | Crafted with ❤️ for learning and productivity</p>
+<p align="center">© Ashok-777 | Crafted with ❤️ and curiosity</p>
 
 ---
