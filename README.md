@@ -64,6 +64,15 @@ It's a handy tool for students, developers, or anyone working with number system
 
 ---
 
+## ⚡ Future Enhancements
+
+**Full-Stack Upgrade – Work in Progress** 🔧🛠️  
+
+The Universal Base Converter is evolving! 
+
+Stay tuned – the converter is about to get **even smarter, interactive, and full-stack ready**!
+
+---
 ## License
 
 This project is licensed under the GPL-3.0 license. See the License file for details.
