@@ -66,7 +66,7 @@ It's a handy tool for students, developers, or anyone working with number system
 
 ⚡ **License**
 
-This project is licensed under the License. See the License file for details.
+This project is licensed under the GPL-3.0 license. See the License file for details.
 
 ---
 
