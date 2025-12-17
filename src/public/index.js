@@ -1,3 +1,5 @@
+/* © Ashok-777 */
+/* GitHub: https://github.com/Ashok-777 */
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI on load
@@ -395,3 +397,5 @@ async function copyResult(elementId, baseName) {
         alert('Copy failed. Please copy manually.');
     }
           }
+/* © Ashok-777 */
+/* GitHub: https://github.com/Ashok-777 */
